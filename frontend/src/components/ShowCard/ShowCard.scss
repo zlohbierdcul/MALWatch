@@ -7,7 +7,7 @@
     width: 250px;
     aspect-ratio: 4/6;
     background-color: $lightGrey;
-    border-radius: 2rem !important;
+    border-radius: 1rem !important;
     overflow: hidden;
     box-shadow: 0px 0px 10px -2px black;
     transition: all 0.3s ease-in-out;
@@ -37,37 +37,63 @@
     padding: 1rem;
     padding-top: 3rem;
     color: $dark;
+    cursor: default;
 }
 
 .show-title {
     font-weight: 800;
     font-size: 20px;
+    cursor: pointer;
 
 }
 
 .show-title-jp {
     font-size: 14px;
+    cursor: pointer;
 }
 
 .show-desc {
     font-size: 12px;
+    display: -webkit-box;
+    max-width: 200px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .play-btn {
     position: absolute;
     top: 2rem;
     right: 1rem;
-    width: 50px;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-    background-color: $primary;
-    margin-bottom: 1rem;
-    box-shadow: 0px 0px 10px -2px black;
-    transition: all 0.3s ease-in-out;
+
 }
 
-.play-btn:hover {
-    box-shadow: 0px 0px 20px -2px black;
-    scale: 1.05;
-    cursor: pointer;
+.provider-logo {
+    position: absolute;
+    left: -10%;
+    bottom: -10%;
+    z-index: 999999;
+    width: 30px;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+.episode-indicator {
+    background-color: #141414a4;
+    border-radius: 0.5rem;
+    position: absolute;
+    padding: 5px 10px 5px 10px;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 400;
+    pointer-events: none;
+}
+
+.current-ep {
+    color: $primary;
 }

@@ -55,7 +55,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 const NavigationBar = () => {
     return (
         <Box
-            sx={{ flexGrow: 1 }}
+            sx={{ flexGrow: 1, paddingY: 0 }}
             className='navbar'
         >
             <AppBar

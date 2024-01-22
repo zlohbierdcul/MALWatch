@@ -1,5 +1,7 @@
 /** @type { import('@storybook/react').Preview } */
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import './preview.css';
 
 import { themes } from '@storybook/theming';

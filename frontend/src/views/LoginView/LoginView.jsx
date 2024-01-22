@@ -6,9 +6,11 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 
 import './LoginView.css';
-import IconButton from '../components/Button/IconButton';
+import IconButton from '../../components/Button/IconButton';
 
-const LoginView = () => {
+import PropTypes from 'prop-types';
+
+const LoginView = ({ setLoggedIn }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(false);
@@ -27,6 +29,7 @@ const LoginView = () => {
             setError(true);
         } else {
             setError(false);
+            setLoggedIn(true); // Set loggedIn to true when button is clicked
         }
     };
 
@@ -101,6 +104,11 @@ const LoginView = () => {
             </div>
         </div>
     );
+};
+
+
+LoginView.propTypes = {
+    setLoggedIn: PropTypes.func.isRequired, // setLoggedIn prop should be a function and is required
 };
 
 export default LoginView;

@@ -1,6 +1,6 @@
 
 // Hooks
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // CSS
 import "./MobileNavigationBar.css"
@@ -16,11 +16,20 @@ import { CenterFocusStrongRounded, HomeRounded, ListRounded, SearchRounded } fro
 
 function MobileNavigationBar() {
     const [value, setValue] = useState(0);
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 576);
+
+    useEffect(() => {
+        window.addEventListener("resize", () => {
+            setIsMobile(window.innerWidth < 576)
+
+        })
+    }, [])
 
     return (
-        <Box sx={{ width: 500 }} className="mobile-navbar">
+        <Box className="mobile-navbar" sx={{ position: 'fixed', bottom: 0, width: 1.0 }}>
             <BottomNavigation
                 value={value}
+                style={{display: isMobile ? "flex" : "none"}}
                 onChange={(event, newValue) => {
                     setValue(newValue);
                 }}
