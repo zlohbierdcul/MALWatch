@@ -1,11 +1,7 @@
 @import '../../utils/variables';
 
-.mobile-navbar {
-    background-color: $lightDark;
-}
-
 .MuiBottomNavigation-root {
-    background-color: $lightDark;
+    background-color: $lightDark !important;
 }
 
 .MuiBottomNavigationAction-root {

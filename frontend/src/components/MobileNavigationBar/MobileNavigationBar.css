@@ -1,9 +1,5 @@
-.mobile-navbar {
-  background-color: #35393C;
-}
-
 .MuiBottomNavigation-root {
-  background-color: #35393C;
+  background-color: #35393C !important;
 }
 
 .MuiBottomNavigationAction-root {

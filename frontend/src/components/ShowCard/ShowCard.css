@@ -1,0 +1,68 @@
+.show-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  aspect-ratio: 4/6;
+  background-color: #676b6d;
+  border-radius: 2rem !important;
+  overflow: hidden;
+  box-shadow: 0px 0px 10px -2px black;
+  transition: all 0.3s ease-in-out;
+}
+
+.show-card:hover {
+  scale: 1.05;
+  box-shadow: 0px 0px 20px -2px black;
+}
+
+.show-img img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.show-img img:hover {
+  cursor: pointer;
+}
+
+.show-info {
+  position: absolute;
+  width: 100%;
+  background: linear-gradient(0deg, #35393C 65%, rgba(0, 0, 0, 0) 100%);
+  bottom: 0;
+  padding: 1rem;
+  padding-top: 3rem;
+  color: #141414;
+}
+
+.show-title {
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.show-title-jp {
+  font-size: 14px;
+}
+
+.show-desc {
+  font-size: 12px;
+}
+
+.play-btn {
+  position: absolute;
+  top: 2rem;
+  right: 1rem;
+  width: 50px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: #9EE493;
+  margin-bottom: 1rem;
+  box-shadow: 0px 0px 10px -2px black;
+  transition: all 0.3s ease-in-out;
+}
+
+.play-btn:hover {
+  box-shadow: 0px 0px 20px -2px black;
+  scale: 1.05;
+  cursor: pointer;
+}/*# sourceMappingURL=ShowCard.css.map */
