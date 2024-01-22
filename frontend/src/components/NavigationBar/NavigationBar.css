@@ -1,0 +1,59 @@
+.navbar {
+  color: linear-gradient(180deg, 90deg, #35393C 0%, #35393C 80%, rgba(0, 0, 0, 0) 100%);
+}
+
+.nav-link {
+  display: block;
+  padding: 5px;
+  text-decoration: none;
+  font-weight: 800;
+  position: relative;
+  color: #535759;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  transition: width 2s;
+}
+
+.nav-link.selected {
+  color: #9EE493;
+}
+
+.nav-link:after,
+.nav-link:before {
+  transition: all 0.5s;
+}
+
+.nav-link:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: ".";
+  color: transparent;
+  background: #676b6d;
+  height: 2px;
+}
+
+.nav-link:hover {
+  color: #676b6d;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link.selected:hover {
+  color: #9EE493;
+}
+
+.nav-link.selected:hover::after {
+  background: #9EE493;
+}
+
+@media (max-width: 575.98px) {
+  .navbar {
+    display: none !important;
+  }
+}/*# sourceMappingURL=NavigationBar.css.map */

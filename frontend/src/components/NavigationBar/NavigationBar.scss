@@ -1,0 +1,70 @@
+@import '../../utils/variables';
+
+
+
+.navbar {
+    color: linear-gradient(
+        180deg,
+        90deg,
+        $lightDark 0%,
+        $lightDark 80%,
+        rgba(0, 0, 0, 0) 100%
+    );
+}
+
+.nav-link {
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+    font-weight: 800;
+    position: relative;
+    color: $grey;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    transition: width 2s;
+}
+
+.nav-link.selected {
+    color: $primary;
+}
+
+.nav-link:after,
+.nav-link:before {
+    transition: all 0.5s;
+}
+
+.nav-link:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: '.';
+    color: transparent;
+    background: $lightGrey;
+    height: 2px;
+}
+
+.nav-link:hover {
+    color: $lightGrey;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link.selected:hover {
+    color: $primary;
+}
+
+.nav-link.selected:hover::after {
+    background: $primary;
+}
+
+
+@media (max-width: 575.98px) {
+    .navbar {
+        display: none !important;
+    }
+}

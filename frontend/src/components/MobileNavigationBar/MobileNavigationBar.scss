@@ -1,0 +1,19 @@
+@import '../../utils/variables';
+
+.mobile-navbar {
+    background-color: $lightDark;
+}
+
+.MuiBottomNavigation-root {
+    background-color: $lightDark;
+}
+
+.MuiBottomNavigationAction-root {
+    color: $lightGrey;
+}
+
+@media (min-width: 576) {
+    .mobile-navbar {
+        display: none !important;
+    }
+}

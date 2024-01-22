@@ -1,5 +1,6 @@
 .login-bg {
   height: 100dvh;
+  background-image: url("/assets/background_dark.png");
 }
 
 .login-container {
@@ -11,4 +12,5 @@
 .login-container:hover {
   box-shadow: 0px 0px 60px -30px #9ee493;
   scale: 1.1;
+  transform: perspective(2000px) rotateX("10deg");
 }/*# sourceMappingURL=LoginView.css.map */

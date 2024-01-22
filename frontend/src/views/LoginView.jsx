@@ -31,7 +31,7 @@ const LoginView = () => {
     };
 
     return (
-        <div className='login-bg d-flex justify-content-center align-items-center bg-body'>
+        <div className='login-bg d-flex justify-content-center align-items-center'>
             <div className='login-container bg-body-secondary p-5 rounded-5 d-flex flex-column justify-content-center align-items-center'>
                 <img
                     src='/assets/logo.png'

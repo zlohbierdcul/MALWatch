@@ -1,0 +1,17 @@
+.mobile-navbar {
+  background-color: #35393C;
+}
+
+.MuiBottomNavigation-root {
+  background-color: #35393C;
+}
+
+.MuiBottomNavigationAction-root {
+  color: #676b6d;
+}
+
+@media (min-width: 576) {
+  .mobile-navbar {
+    display: none !important;
+  }
+}/*# sourceMappingURL=MobileNavigationBar.css.map */
