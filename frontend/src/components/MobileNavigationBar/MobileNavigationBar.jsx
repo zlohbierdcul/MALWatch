@@ -19,6 +19,7 @@ function MobileNavigationBar() {
     const [isMobile, setIsMobile] = useState(window.innerWidth < 576);
 
     useEffect(() => {
+        // ResizeListener to hide Navigation on desktop
         window.addEventListener("resize", () => {
             setIsMobile(window.innerWidth < 576)
 

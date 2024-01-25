@@ -6,7 +6,8 @@
   display: block;
   padding: 5px;
   text-decoration: none;
-  font-weight: 800;
+  font-weight: 800 !important;
+  font-family: "Open Sans" !important;
   position: relative;
   color: #535759;
   cursor: pointer;

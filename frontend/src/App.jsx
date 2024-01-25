@@ -1,10 +1,18 @@
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import LoginView from './views/LoginView/LoginView';
+// React
 import { useState } from 'react';
+
+// Styling
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+// Components
+import LoginView from './views/LoginView/LoginView';
 import NavigationBar from './components/NavigationBar/NavigationBar';
 import MobileNavigationBar from './components/MobileNavigationBar/MobileNavigationBar';
 import HomeView from './views/HomeView/HomeView';
+import StarRating from './components/StarRating/StarRating';
 
+
+// MUI custom theme palette 
 const theme = createTheme({
     palette: {
         primary: {
@@ -37,6 +45,7 @@ function App() {
                 <>
                     <NavigationBar></NavigationBar>
                     <HomeView></HomeView>
+                    <StarRating></StarRating>
                     <MobileNavigationBar></MobileNavigationBar>
                 </>
             )}

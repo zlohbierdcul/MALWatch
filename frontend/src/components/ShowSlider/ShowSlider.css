@@ -7,6 +7,11 @@
 .arrow-btn {
   top: 45%;
   z-index: 1;
+  color: #9EE493 !important;
+  background-color: #242424 !important;
+  box-shadow: 0 0 10px 0px black;
+  margin-left: 1rem !important;
+  margin-right: 1rem !important;
 }
 
 .next {

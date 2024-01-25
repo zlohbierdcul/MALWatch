@@ -1,13 +1,21 @@
+// React
+import { useState } from 'react';
+
+// Util
 import PropTypes from 'prop-types';
+
+// Components
 import Slider from 'react-slick';
 import ShowCard from '../ShowCard/ShowCard.jsx';
+
+// Icons
 import IconButton from '@mui/material/IconButton';
 import {
     ArrowBackIosNewOutlined,
     ArrowForwardIosOutlined,
 } from '@mui/icons-material';
-import { useState } from 'react';
 
+// Styling
 import './ShowSlider.css';
 
 const ShowSlider = ({ shows }) => {
@@ -17,19 +25,42 @@ const ShowSlider = ({ shows }) => {
         dots: false,
         arrows: false,
         infinite: true,
+        centerMode: true,
+        centerPadding: "60px",
         speed: 500,
-        slidesToShow: 3,
-        slidesToScroll: 3,
+        slidesToShow: 6,
+        slidesToScroll: 6,
         responsive: [
             {
-                breakpoint: 1024,
+                breakpoint: 1400,
                 settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
+                    slidesToShow: 5,
+                    slidesToScroll: 5,
+                },
+            },
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                },
+            },
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
                 },
             },
             {
                 breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                },
+            },
+            {
+                breakpoint: 576,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
@@ -39,7 +70,7 @@ const ShowSlider = ({ shows }) => {
     };
 
     return (
-        <div style={{position: "relative"}}>
+        <div style={{ position: 'relative' }}>
             <div className='slider-arrow'>
                 <IconButton
                     onClick={() => slider.slickPrev()}
@@ -62,7 +93,7 @@ const ShowSlider = ({ shows }) => {
                 {shows.map((show, index) => (
                     <div
                         key={index}
-                        className='p-5'
+                        className='p-3'
                     >
                         <ShowCard
                             key={index}

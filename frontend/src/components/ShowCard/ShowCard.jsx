@@ -11,9 +11,9 @@ import { PlayArrow } from '@mui/icons-material';
 import Fab from '@mui/material/Fab';
 import { useState } from 'react';
 
-const ShowCard = ({ title, titleJP, description, coverImageURL }) => {
+const ShowCard = ({ title, titleJP, description, coverImageURL, provider }) => {
 
-    const [hasProvider, setHasProvider] = useState(false)
+    const [hasProvider, setHasProvider] = useState(provider ? true : false)
 
     return (
         <div className='show-card'>
@@ -49,6 +49,7 @@ ShowCard.propTypes = {
     titleJP: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     coverImageURL: PropTypes.string.isRequired,
+    provider: PropTypes.string,
 };
 
 export default ShowCard;
