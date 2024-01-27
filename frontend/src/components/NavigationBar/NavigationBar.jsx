@@ -1,5 +1,5 @@
 // Styling
-import styles from "./NavigationBar.module.css"
+import styles from './NavigationBar.module.css';
 import { styled, alpha } from '@mui/material/styles';
 
 // Components
@@ -54,12 +54,10 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const NavigationBar = () => {
-    
     return (
-        <Box className={styles.navBar}>
-            <AppBar
-                position='static'
-                color='lightDark'
+        <Box className={styles.navContainer}>
+            <div
+                className={styles.navBar}
             >
                 <Toolbar>
                     <img
@@ -67,7 +65,9 @@ const NavigationBar = () => {
                         height={'30px'}
                     ></img>
                     <div className={styles.navLinkContainer + ' gap-5'}>
-                        <div className={styles.navLinkConatiner}>Home</div>
+                        <div className={`${styles.navLink} ${styles.selected}`}>
+                            Home
+                        </div>
                         <div className={styles.navLink}>MyList</div>
                         <div className={styles.navLink}>Discover</div>
                     </div>
@@ -81,7 +81,7 @@ const NavigationBar = () => {
                         />
                     </Search>
                 </Toolbar>
-            </AppBar>
+            </div>
         </Box>
     );
 };

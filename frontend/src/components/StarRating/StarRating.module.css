@@ -44,7 +44,22 @@
 }
 
 .ratingScore {
+  height: -moz-fit-content;
+  height: fit-content;
+  color: #676b6d;
   text-align: end;
   padding-right: 0.5rem;
   font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.ratingScore span {
+  color: #9EE493;
+}
+
+.ratingLabel {
+  color: #676b6d;
+  text-align: right;
+  font-size: 1rem;
+  padding-right: 0.5rem;
 }/*# sourceMappingURL=StarRating.module.css.map */

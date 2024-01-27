@@ -1,20 +1,30 @@
-.navBar {
-  color: linear-gradient(180deg, 90deg, #35393C 0%, #35393C 80%, rgba(0, 0, 0, 0) 100%);
+.navContainer {
   padding-top: 0;
 }
 
 .navLinkContainer {
   display: flex;
+  align-items: center;
   flex-grow: 1;
   margin-left: 2rem;
 }
 
+.navBar {
+  background: rgb(22, 22, 22) !important;
+  background: linear-gradient(180deg, #141414 0%, #141414 15%, rgba(0, 0, 0, 0) 80%) !important;
+  position: static;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+  padding-bottom: 0.5rem;
+}
+
 .navLink {
-  display: block;
-  padding: 5px;
-  text-decoration: none;
-  font-weight: 800 !important;
   position: relative;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 800 !important;
   color: #535759;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
@@ -60,7 +70,7 @@
 }
 
 @media (max-width: 575.98px) {
-  .navbar {
+  .navBar {
     display: none !important;
   }
 }/*# sourceMappingURL=NavigationBar.module.css.map */
