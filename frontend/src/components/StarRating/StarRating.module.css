@@ -1,0 +1,50 @@
+.starContainer {
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 0.5rem;
+  z-index: 999;
+}
+
+.starBackgroundContainer {
+  top: 0;
+}
+
+.starFillingContainer {
+  position: absolute;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 0;
+  top: 0.5rem;
+  pointer-events: none !important;
+}
+
+.starFilling {
+  position: relative;
+  overflow: hidden;
+}
+
+.starOutlineContainer {
+  position: absolute;
+  top: 0.5rem;
+}
+
+.starOutline {
+  color: #9EE493;
+  transform: scale(1.2);
+  pointer-events: none;
+  transition: all 0.5s linear;
+}
+
+.ratingContainer {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.ratingScore {
+  text-align: end;
+  padding-right: 0.5rem;
+  font-size: 1.2rem;
+}/*# sourceMappingURL=StarRating.module.css.map */

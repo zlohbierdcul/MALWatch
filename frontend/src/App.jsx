@@ -37,7 +37,7 @@ const theme = createTheme({
 });
 
 function App() {
-    const [loggedIn, setLoggedIn] = useState(false);
+    const [loggedIn, setLoggedIn] = useState(true);
     return (
         <ThemeProvider theme={theme}>
             {!loggedIn && <LoginView setLoggedIn={setLoggedIn}></LoginView>}
@@ -45,7 +45,7 @@ function App() {
                 <>
                     <NavigationBar></NavigationBar>
                     <HomeView></HomeView>
-                    <StarRating></StarRating>
+                    <StarRating rating={4.3}></StarRating>
                     <MobileNavigationBar></MobileNavigationBar>
                 </>
             )}

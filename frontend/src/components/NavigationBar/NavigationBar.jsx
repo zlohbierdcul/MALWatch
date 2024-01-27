@@ -1,13 +1,14 @@
-// CSS
-import './NavigationBar.css';
+// Styling
+import styles from "./NavigationBar.module.css"
+import { styled, alpha } from '@mui/material/styles';
 
 // Components
-import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
+
+// Icons
 import SearchIcon from '@mui/icons-material/Search';
 
 const Search = styled('div')(({ theme }) => ({
@@ -53,11 +54,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const NavigationBar = () => {
+    
     return (
-        <Box
-            sx={{ flexGrow: 1, paddingY: 0 }}
-            className='navbar'
-        >
+        <Box className={styles.navBar}>
             <AppBar
                 position='static'
                 color='lightDark'
@@ -67,34 +66,10 @@ const NavigationBar = () => {
                         src='/assets/logo.png'
                         height={'30px'}
                     ></img>
-                    <div
-                        className='d-flex gap-5'
-                        style={{ flexGrow: 1, marginLeft: '2rem' }}
-                    >
-                        <Typography
-                            variant='h6'
-                            noWrap
-                            component='div'
-                            className='nav-link selected'
-                        >
-                            Home
-                        </Typography>
-                        <Typography
-                            variant='h6'
-                            noWrap
-                            component='div'
-                            className='nav-link'
-                        >
-                            MyList
-                        </Typography>
-                        <Typography
-                            variant='h6'
-                            noWrap
-                            component='div'
-                            className='nav-link'
-                        >
-                            Discover
-                        </Typography>
+                    <div className={styles.navLinkContainer + ' gap-5'}>
+                        <div className={styles.navLinkConatiner}>Home</div>
+                        <div className={styles.navLink}>MyList</div>
+                        <div className={styles.navLink}>Discover</div>
                     </div>
                     <Search>
                         <SearchIconWrapper>
