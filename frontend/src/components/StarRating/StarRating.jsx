@@ -1,21 +1,22 @@
+// React
+import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
+
+// Components
+import { Tooltip } from '@mui/material';
+
+// Utils
+// None in the provided code
+
+// Styling
+import styles from './StarRating.module.css';
+
 // Icons
 import StarBorderRoundedIcon from '@mui/icons-material/StarBorderRounded';
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
-import PropTypes from 'prop-types';
-import { useEffect, useState } from 'react';
-import styles from './StarRating.module.css';
 
-// calculates the distance from the mouse to the left side of the star container
-// and formats it into a 0-5 scale
-const calculateRating = (e) => {
-    if (!Array.from(e.target.classList.values()).includes('stars')) return;
-    var rect = e.target.getBoundingClientRect();
-    const rectWidth = rect.width;
-    var x = e.clientX - rect.left; //x position within the element.
-
-    // 0f-1f -> 0.0-5.5
-    return Math.round((x / rectWidth) * 50) / 10;
-};
+// Other
+// None in the provided code
 
 /**
  *  Component that takes in a number from 0-10 and shows the rating as a 5-Star-Rating
@@ -23,8 +24,17 @@ const calculateRating = (e) => {
  * @return {*}
  */
 const StarRating = ({ rating }) => {
-    var originalRating = rating
     const [starRating, setStarRating] = useState(rating);
+    var originalRating = rating;
+
+    // Adding EventListener on render
+    useEffect(() => {
+        console.log('render');
+        const stars = document.querySelector('.stars');
+        stars.addEventListener('mousemove', starHoverListener);
+        stars.addEventListener('mouseout', starLeaveListener);
+        stars.addEventListener('click', starClickListener);
+    }, []);
 
     // sets the displayed rating to the calculated hover rating
     const starHoverListener = (e) => {
@@ -33,28 +43,30 @@ const StarRating = ({ rating }) => {
 
     // resets the rating when mouse leaves the stars
     const starLeaveListener = () => {
-        console.log(originalRating)
         setStarRating(originalRating);
     };
 
     const starClickListener = (e) => {
-        const newRating = calculateRating(e)
-        originalRating = newRating
-        setStarRating(newRating)
-    }
+        const newRating = calculateRating(e);
+        originalRating = newRating;
+        setStarRating(newRating);
+    };
 
-    // Adding EventListener on render
-    useEffect(() => {
-        console.log("render")
-        const stars = document.querySelector('.stars');
-        stars.addEventListener('mousemove', starHoverListener);
-        stars.addEventListener('mouseout', starLeaveListener);
-        stars.addEventListener('click', starClickListener);
-    }, []);
+    // calculates the distance from the mouse to the left side of the star container
+    // and formats it into a 0-5 scale
+    const calculateRating = (e) => {
+        if (!Array.from(e.target.classList.values()).includes('stars')) return;
+        var rect = e.target.getBoundingClientRect();
+        const rectWidth = rect.width;
+        var x = e.clientX - rect.left; //x position within the element.
 
+        // 0f-1f -> 0.0-5.5
+        return Math.round((x / rectWidth) * 50) / 10;
+    };
+
+    // Calculates the filling width each star needs to have
     const calculateStars = () => {
         const stars = [];
-        // Gets the first digit of the rating (no +1 because loop starts at 0)
         const splitRating = starRating.toString().split('.');
         const splitStar = Number.parseInt(splitRating[0]);
         const splitRatio = Number.parseInt(splitRating[1]);
@@ -97,13 +109,21 @@ const StarRating = ({ rating }) => {
                         );
                     })}
                 </div>
-                <div className={styles.starOutlineContainer + ' stars'}>
-                    <StarBorderRoundedIcon className={styles.starOutline} />
-                    <StarBorderRoundedIcon className={styles.starOutline} />
-                    <StarBorderRoundedIcon className={styles.starOutline} />
-                    <StarBorderRoundedIcon className={styles.starOutline} />
-                    <StarBorderRoundedIcon className={styles.starOutline} />
-                </div>
+                <Tooltip
+                    title='Set a rating'
+                    placement='top'
+                    leaveDelay={99999}
+                    followCursor
+                    className={styles.ratingTooltip}
+                >
+                    <div className={styles.starOutlineContainer + ' stars'}>
+                        <StarBorderRoundedIcon className={styles.starOutline} />
+                        <StarBorderRoundedIcon className={styles.starOutline} />
+                        <StarBorderRoundedIcon className={styles.starOutline} />
+                        <StarBorderRoundedIcon className={styles.starOutline} />
+                        <StarBorderRoundedIcon className={styles.starOutline} />
+                    </div>
+                </Tooltip>
             </div>
             <div className={styles.ratingScore}>
                 <span>{starRating}</span> / 5

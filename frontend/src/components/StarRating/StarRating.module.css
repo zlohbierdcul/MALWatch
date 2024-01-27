@@ -62,4 +62,8 @@
   text-align: right;
   font-size: 1rem;
   padding-right: 0.5rem;
+}
+
+.ratingTooltip {
+  font-family: "Nunito", sans !important;
 }/*# sourceMappingURL=StarRating.module.css.map */

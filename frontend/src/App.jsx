@@ -1,42 +1,23 @@
 // React
 import { useState } from 'react';
 
-// Styling
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-
 // Components
-import LoginView from './views/LoginView/LoginView';
-import NavigationBar from './components/NavigationBar/NavigationBar';
-import MobileNavigationBar from './components/MobileNavigationBar/MobileNavigationBar';
-import HomeView from './views/HomeView/HomeView';
-import StarRating from './components/StarRating/StarRating';
+import NavigationBar from '@Components/NavigationBar/NavigationBar';
+import MobileNavigationBar from '@Components/MobileNavigationBar/MobileNavigationBar';
+import StarRating from '@Components/StarRating/StarRating';
+
+// Views
+import LoginView from '@Views/LoginView/LoginView';
+import HomeView from '@Views/HomeView/HomeView';
+
+// Styling
+import { ThemeProvider } from '@mui/material/styles';
+
+// Utils
+import { theme } from '@Utils/css/theme';
 
 
-// MUI custom theme palette 
-const theme = createTheme({
-    palette: {
-        primary: {
-            main: '#9EE493',
-        },
-        secondary: {
-            main: '#F95738',
-        },
-        grey: {
-            main: '#535759',
-        },
-        lightGrey: {
-            main: '#676b6d',
-        },
-        dark: {
-            main: '#141414',
-        },
-        lightDark: {
-            main: '#35393C',
-        },
-    },
-});
-
-function App() {
+const App = () => {
     const [loggedIn, setLoggedIn] = useState(true);
     return (
         <ThemeProvider theme={theme}>

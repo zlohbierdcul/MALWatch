@@ -1,14 +1,23 @@
+
+// React
 import { useState } from 'react';
+
+// Components
 import { TextField } from '@mui/material';
-import { ArrowForwardIosSharp } from '@mui/icons-material';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
+import IconButton from '@Components/IconButton/IconButton';
 
-import './LoginView.css';
-import IconButton from '../../components/Button/IconButton';
-
+// Utils
 import PropTypes from 'prop-types';
+
+// Styling
+import './LoginView.css';
+
+// Icons
+import { ArrowForwardIosSharp } from '@mui/icons-material';
+
 
 const LoginView = ({ setLoggedIn }) => {
     const [username, setUsername] = useState('');

@@ -1,0 +1,40 @@
+.searchContainer {
+  position: relative;
+  margin-left: 0.5rem;
+  border-radius: 1rem;
+  background-color: rgba(53, 57, 60, 0.2);
+}
+
+.searchContainer:hover {
+  background-color: rgba(53, 57, 60, 0.3);
+}
+
+.searchIconContainer {
+  position: absolute;
+  height: 100%;
+  padding: 0.4rem 0.4rem 0.4rem 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  color: #9EE493;
+}
+
+.searchInput {
+  width: 100%;
+}
+
+.searchInput input {
+  color: #9EE493 !important;
+  font-family: "Nunito", sans !important;
+  padding: 0.25rem 0.5rem 0.25rem 1.8rem;
+  transition: width 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  width: 0rem;
+  display: flex;
+  align-items: center;
+}
+
+.searchInput input:focus {
+  width: 18ch;
+  padding-left: 2.25rem;
+}/*# sourceMappingURL=SearchInput.module.css.map */

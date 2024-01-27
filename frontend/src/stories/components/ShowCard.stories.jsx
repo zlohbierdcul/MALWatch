@@ -1,4 +1,4 @@
-import ShowCard from '../../components/ShowCard/ShowCard';
+import ShowCard from '@Components/ShowCard/ShowCard';
 
 export default {
     component: ShowCard,

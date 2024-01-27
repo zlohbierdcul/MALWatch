@@ -1,4 +1,4 @@
-@import "../../utils/variables";
+@import '../../utils/css/variables';
 
 .starContainer {
     position: relative;
@@ -60,4 +60,8 @@
     text-align: right;
     font-size: 1rem;
     padding-right: .5rem;
+}
+
+.ratingTooltip {
+    font-family: "Nunito", sans !important;
 }

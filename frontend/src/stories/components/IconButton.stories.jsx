@@ -1,5 +1,5 @@
 import { ArrowForward } from '@mui/icons-material';
-import IconButton from '../../components/Button/IconButton.jsx';
+import IconButton from '../../components/IconButton/IconButton.jsx';
 
 export default {
     component: IconButton,

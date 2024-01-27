@@ -6,12 +6,12 @@ import { useEffect, useState } from "react";
 import "./MobileNavigationBar.css"
 
 // Components
-import Box from '@mui/material/Box';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 
 // Icons
 import { CenterFocusStrongRounded, HomeRounded, ListRounded, SearchRounded } from '@mui/icons-material';
+import { Stack } from "@mui/material";
 
 
 function MobileNavigationBar() {
@@ -27,7 +27,7 @@ function MobileNavigationBar() {
     }, [])
 
     return (
-        <Box className="mobile-navbar" sx={{ position: 'fixed', bottom: 0, width: 1.0 }}>
+        <Stack className="mobile-navbar" sx={{ position: 'fixed', bottom: 0, width: 1.0 }}>
             <BottomNavigation
                 value={value}
                 style={{display: isMobile ? "flex" : "none"}}
@@ -52,7 +52,7 @@ function MobileNavigationBar() {
                     icon={<SearchRounded />}
                 />
             </BottomNavigation>
-        </Box>
+        </Stack>
     );
 }
 

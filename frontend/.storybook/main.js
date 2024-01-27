@@ -1,4 +1,6 @@
 /** @type { import('@storybook/react-vite').StorybookConfig } */
+const path = require('path');
+
 const config = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
   addons: [
@@ -17,5 +19,15 @@ const config = {
   features: {
     emotionAlias: false,
   },
+  webpackFinal: async (conf) => {
+    conf.resolve.alias = {
+      ...conf.resolve.alias,
+      '@Components': path.resolve(__dirname, "../../src/components"),
+      '@Utils': path.resolve(__dirname, "../../src/utils"),
+      '@Views': path.resolve(__dirname, "../../src/views"),
+    };
+
+    return conf;
+  }
 };
 export default config;
