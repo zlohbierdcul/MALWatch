@@ -4,7 +4,8 @@
   "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky"
   },
   "husky": {
     "hooks": {
@@ -17,5 +18,8 @@
   "devDependencies": {
     "husky": "^9.0.10",
     "lint-staged": "^15.2.2"
+  },
+  "dependencies": {
+    "eslint": "^8.56.0"
   }
 }
