@@ -32,7 +32,7 @@ jobs:
           # Disable running of tests within install job
           runTests: false
       - run: pwd
-      - run: "echo 'Script executed from: ${PWD}'"
+      - run: npm install
       - run: npm run build
 
       - name: Save build folder
