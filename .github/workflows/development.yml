@@ -79,6 +79,6 @@ jobs:
         uses: cypress-io/github-action@v4
         with:
           working-directory: frontend
-          start: npm start
+          start: npm run dev
           browser: chrome 
 
