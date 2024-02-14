@@ -17,7 +17,8 @@ import { ThemeProvider } from '@mui/material/styles';
 import { theme } from '@Utils/css/theme';
 
 const App = () => {
-	const [loggedIn, setLoggedIn] = useState(true);
+	const [loggedIn, setLoggedIn] = 
+    useState(true);
 	return (
 		<ThemeProvider theme={theme}>
 			{!loggedIn && <LoginView setLoggedIn={setLoggedIn}></LoginView>}
