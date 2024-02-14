@@ -64,7 +64,7 @@ jobs:
   cypress-run:
     runs-on: ubuntu-22.04
     # Needs the install job to be finished
-    needs: install
+    needs: [ install, unit-tests ]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -78,6 +78,7 @@ jobs:
       - name: Run Cypress tests
         uses: cypress-io/github-action@v4
         with:
+          working-directory: frontend
           start: npm start
           browser: chrome 
 
