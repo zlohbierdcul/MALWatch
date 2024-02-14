@@ -31,6 +31,8 @@ jobs:
         with:
           # Disable running of tests within install job
           runTests: false
+      - run: pwd
+      - run: npm install
       - run: npm run build
 
       - name: Save build folder
