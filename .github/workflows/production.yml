@@ -62,7 +62,7 @@ jobs:
   cypress-run:
     runs-on: ubuntu-22.04
     # Needs the install job to be finished
-    needs: build-and-cypress-install
+    needs: [ build-and-cypress-install, unit-tests ]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
