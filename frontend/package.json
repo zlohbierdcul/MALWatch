@@ -12,6 +12,7 @@
     "build-storybook": "storybook build",
     "prepare": "cd .. && husky frontend/.husky"
   },
+  "lint-staged": {},
   "dependencies": {
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
