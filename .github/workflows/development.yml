@@ -40,7 +40,7 @@ jobs:
         with:
           name: dist
           if-no-files-found: error
-          path: dist
+          path: frontend/dist
 
   # Run tnit tests
   unit-tests:
