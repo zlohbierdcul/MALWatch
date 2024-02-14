@@ -20,7 +20,7 @@ defaults:
 # Jobs that get executed
 jobs:
   # Install job that installs cypress, builds the project and uploads the build artifact 
-  install:
+  build-and-cypress-install:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
@@ -64,7 +64,7 @@ jobs:
   cypress-run:
     runs-on: ubuntu-22.04
     # Needs the install job to be finished
-    needs: [ install, unit-tests ]
+    needs: [ build-and-cypress-install, unit-tests ]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
