@@ -16,22 +16,22 @@ import { ThemeProvider } from '@mui/material/styles';
 // Utils
 import { theme } from '@Utils/css/theme';
 
-
 const App = () => {
-    const [loggedIn, setLoggedIn] = useState(true);
-    return (
-        <ThemeProvider theme={theme}>
-            {!loggedIn && <LoginView setLoggedIn={setLoggedIn}></LoginView>}
-            {loggedIn && (
-                <>
-                    <NavigationBar></NavigationBar>
-                    <HomeView></HomeView>
-                    <StarRating rating={4.3}></StarRating>
-                    <MobileNavigationBar></MobileNavigationBar>
-                </>
-            )}
-        </ThemeProvider>
-    );
-}
+	const [loggedIn, setLoggedIn] = 
+    useState(true);
+	return (
+		<ThemeProvider theme={theme}>
+			{!loggedIn && <LoginView setLoggedIn={setLoggedIn}></LoginView>}
+			{loggedIn && (
+				<>
+					<NavigationBar></NavigationBar>
+					<HomeView></HomeView>
+					<StarRating rating={4.3}></StarRating>
+					<MobileNavigationBar></MobileNavigationBar>
+				</>
+			)}
+		</ThemeProvider>
+	);
+};
 
 export default App;
