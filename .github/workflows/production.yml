@@ -14,7 +14,7 @@ on:
 # Set the working directory to PageStatsReact since the project is in a sub-folder
 defaults:
   run:
-    working-directory: PageStatsReact
+    working-directory: frontend
 
 # Jobs that get executed
 jobs:
@@ -62,7 +62,7 @@ jobs:
   cypress-run:
     runs-on: ubuntu-22.04
     # Needs the install job to be finished
-    needs: build-and-cypress-install
+    needs: [ build-and-cypress-install, unit-tests ]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
