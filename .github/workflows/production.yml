@@ -19,7 +19,7 @@ defaults:
 # Jobs that get executed
 jobs:
   # Install job that installs cypress, builds the project and uploads the build artifact 
-  install:
+  build-and-cypress-install:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
@@ -30,14 +30,15 @@ jobs:
         with:
           # Disable running of tests within install job
           runTests: false
-          build: npm run build
+      - run: npm install
+      - run: npm run build
 
       - name: Save build folder
         uses: actions/upload-artifact@v4
         with:
           name: dist
           if-no-files-found: error
-          path: dist
+          path: frontend/dist
 
   # Run tnit tests
   unit-tests:
@@ -81,6 +82,7 @@ jobs:
   # Deployment job to deploy to server using ssh
   deploy:
     runs-on: ubuntu-22.04
+    needs: cypress-run
     steps:
       - name: Download the build folder
         uses: actions/download-artifact@v4
